@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TUOGGI Store - Serving you is our priority</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav role="navigation" aria-label="Main navigation" style="position: relative;">
+        <a href="#" class="logo" tabindex="0">TUOGGI</a>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="nav-links" role="menu">
+          <a href="#products" role="menuitem" tabindex="0">Products</a>
+          <a href="#about" role="menuitem" tabindex="0">About</a>
+          <a href="#contact" role="menuitem" tabindex="0">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" role="banner" aria-label="Welcome to My Store">
+      <h1>Welcome to My Store</h1>
+      <p>Discover our exclusive products that you will love. Shop quality, shop smart.</p>
+      <button class="btn-primary" type="button" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+    </section>
+
+    <section id="products" aria-label="Products" class="products-grid">
+      <!-- Example product cards -->
+      <article class="product-card" tabindex="0" aria-label="Product: Classic Watch, price: 129 dollars">
+        <img
+          src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0f7e62e7-e78d-41e5-bb62-baae5d90f07d.png"
+          alt="Classic Watch, stylish wristwatch with silver dial and leather band"
+          class="product-image"
+          loading="lazy"
+          width="400"
+          height="300"
+        />  
+        <h2 class="product-title">Classic Watch</h2>
+        <p class="product-price">$129</p>
+        <button class="btn-add" type="button" onclick="alert('Added Classic Watch to cart')">Add to Cart</button>
+      </article>
+
+      <article class="product-card" tabindex="0" aria-label="Product: Wireless Headphones, price: 89 dollars">
+        <img
+          src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/99708f4b-4f4f-4afc-95ba-0f66d1c4cb5c.png"
+          alt="Wireless headphones in black with cushioned ear cups and adjustable headband"
+          class="product-image"
+          loading="lazy"
+          width="400"
+          height="300"
+        />
+        <h2 class="product-title">Wireless Headphones</h2>
+        <p class="product-price">$89</p>
+        <button class="btn-add" type="button" onclick="alert('Added Wireless Headphones to cart')">Add to Cart</button>
+      </article>
+
+      <article class="product-card" tabindex="0" aria-label="Product: Running Shoes, price: 99 dollars">
+        <img
+          src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/766be576-3cc8-4ec2-b218-8a249ad4f3b3.png"
+          alt="Running shoes with breathable fabric and vibrant red color"
+          class="product-image"
+          loading="lazy"
+          width="400"
+          height="300"
+        />
+        <h2 class="product-title">Running Shoes</h2>
+        <p class="product-price">$99</p>
+        <button class="btn-add" type="button" onclick="alert('Added Running Shoes to cart')">Add to Cart</button>
+      </article>
+
+      <article class="product-card" tabindex="0" aria-label="Product: Smart Home Speaker, price: 79 dollars">
+        <img
+          src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/454ccdb8-e7f8-43ff-ac91-764bff98c5ab.png"
+          alt="Smart home speaker with minimalist design and voice control features"
+          class="product-image"
+          loading="lazy"
+          width="400"
+          height="300"
+        />
+        <h2 class="product-title">Smart Home Speaker</h2>
+        <p class="product-price">$79</p>
+        <button class="btn-add" type="button" onclick="alert('Added Smart Home Speaker to cart')">Add to Cart</button>
+      </article>
+    </section>
+
+    <section id="about" aria-label="About Us" style="max-width: var(--max-width); margin: 40px auto; padding: 0 16px;">
+      <h2>About Us</h2>
+      <p>Our mission is to provide high-quality products at the best prices, combined with excellent customer service. We carefully select the products we offer to ensure your satisfaction.</p>
+    </section>
+
+    <section id="contact" aria-label="Contact Information" style="max-width: var(--max-width); margin: 40px auto 80px; padding: 0 16px;">
+      <h2>Contact Us</h2>
+      <p>Email: prankster13yt@gmail.com</p>
+      <p>Phone: +(212) 6.32.45.48.28</p>
+      <p>Address: unkonnue</p>
+    </section>
+  </main>
+  <footer>
+    &copy; 2024 My Store. All rights reserved.
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+      const expanded = toggleButton.getAttribute('aria-expanded') === 'true';
+      toggleButton.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('open');
+    });
+
+    // Close menu on link click (mobile)
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('open')) {
+          navLinks.classList.remove('open');
+          toggleButton.setAttribute('aria-expanded', 'false');
+        }
+      })
+    });
+  </script>
+</body>
+</html>
