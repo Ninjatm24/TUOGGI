@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    :root {
+      --color-primary: #c50000;
+      --color-primary-dark: #1d4ed8;
+      --color-bg: #f9fafb;
+      --color-white: #ffffff;
+      --color-text: #374151;
+      --radius: 12px;
+      --spacing: 16px;
+      --max-width: 1200px;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --transition: 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--color-primary-dark);
+      outline: none;
+    }
+
+    header {
+      background-color: var(--color-white);
+      box-shadow: 0 2px 5px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .container {
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 var(--spacing);
+      width: 100%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      user-select: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      padding: 8px 0;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--color-primary);
+      transition: width 0.3s ease;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus::after {
+      width: 100%;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 40px 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 16px 60px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      color: var(--color-white);
+      border-radius: var(--radius);
+      margin: 0 16px 48px;
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 10px 20px rgba(13, 42, 148, 0.3);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 32px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.4;
+    }
+
+    .btn-primary {
+      background: var(--color-white);
+      color: var(--color-primary-dark);
+      font-weight: 700;
+      border-radius: 32px;
+      padding: 16px 48px;
+      font-size: 1.125rem;
+      cursor: pointer;
+      border: none;
+      transition: background-color var(--transition), color var(--transition);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.5);
+      user-select: none;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background: var(--color-primary-dark);
+      color: var(--color-white);
+      outline: none;
+      box-shadow: 0 10px 30px rgba(13, 42, 148, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap: 32px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .product-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 3px 10px var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .product-card:hover,
+    .product-card:focus-within {
+      box-shadow: 0 10px 25px rgba(13,42,148,0.2);
+      transform: translateY(-4px);
+      outline: none;
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      user-select: none;
+      background-color: #eee;
+    }
+
+    .product-title {
+      font-weight: 600;
+      font-size: 1.125rem;
+      margin: 0 0 8px 0;
+    }
+
+    .product-price {
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .btn-add {
+      margin-top: auto;
+      background: var(--color-primary);
+      color: var(--color-white);
+      border: none;
+      padding: 12px;
+      border-radius: 24px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color var(--transition);
+      user-select: none;
+    }
+
+    .btn-add:hover,
+    .btn-add:focus {
+      background: var(--color-primary-dark);
+      outline: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--color-white);
+      box-shadow: 0 -2px 5px var(--shadow);
+      font-size: 0.875rem;
+      color: #6b7280;
+      user-select: none;
+    }
+
+    /* Responsive Nav Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 24px;
+      height: 20px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+    .menu-toggle span {
+      width: 100%;
+      height: 3px;
+      background-color: var(--color-primary);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        background: var(--color-white);
+        position: absolute;
+        right: 16px;
+        top: 60px;
+        border-radius: var(--radius);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        padding: 16px;
+        z-index: 110;
+        width: 180px;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
